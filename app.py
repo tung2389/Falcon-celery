@@ -6,10 +6,16 @@ from routes.getFibonnaci import GetFibonnaci
 from routes.login import Login
 from routes.signup import Signup
 
+from middleware.jwtAuthenticate import JWTAuthenticate
+
 db = mongo.connect(
     "falcon-celery"
 )
-api = application = falcon.API()
+api = application = falcon.API(
+    middleware = [
+        JWTAuthenticate()
+    ]
+)
 
 calcFibonnaci = CalcFibonnaci()
 getFibonnaci = GetFibonnaci()

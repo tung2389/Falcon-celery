@@ -9,6 +9,8 @@ mongoengine = "*"
 waitress = "*"
 hupper = "*"
 bcrypt = "*"
+pyjwt = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
