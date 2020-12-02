@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 falcon = "*"
 mongoengine = "*"
+waitress = "*"
+hupper = "*"
+bcrypt = "*"
 
 [dev-packages]
 
