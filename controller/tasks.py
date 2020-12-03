@@ -1,7 +1,9 @@
 from celery import Celery, Task
 from dotenv import load_dotenv
 import os
+from model.task import TaskModel
 from controller.saveResultToFile import saveResultToFile
+import mongoengine as mongo
 
 load_dotenv()
 RABBITMQ_USER = os.getenv("RABBITMQ_USER")
@@ -15,8 +17,15 @@ app = Celery(
 
 class FibonacciTask(Task):
     def on_success(self, result, task_id, args, kwargs):
-        print(result)
         saveResultToFile(task_id, result)
+        mongo.connect(
+            "falcon-celery"
+        )
+        newTask = TaskModel(
+            _id = task_id,
+            result = result
+        )
+        newTask.save()
 
 @app.task(base=FibonacciTask)
 def fibonacci(n):
