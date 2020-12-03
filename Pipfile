@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+falcon = "*"
+mongoengine = "*"
+waitress = "*"
+hupper = "*"
+bcrypt = "*"
+pyjwt = "*"
+python-dotenv = "*"
+celery = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
