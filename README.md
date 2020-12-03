@@ -45,7 +45,7 @@ rabbitmq-server
 
 ```bash
 pipenv shell
-hupper -m celery -A controller.tasks worker --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair --pool=solo
+hupper -m celery -A service.tasks worker --loglevel=INFO --without-gossip --without-mingle --without-heartbeat -Ofair --pool=solo
 ```
 
 ## Contributing

@@ -2,7 +2,7 @@ from celery import Celery, Task
 from dotenv import load_dotenv
 import os
 from model.task import TaskModel
-from controller.saveResultToFile import saveResultToFile
+from service.saveResultToFile import saveResultToFile
 import mongoengine as mongo
 
 load_dotenv()
