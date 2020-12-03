@@ -23,6 +23,6 @@ login = Login()
 signup = Signup()
 
 api.add_route('/fibonacci', calcFibonacci)
-# api.add_route('/fibonacci/{id}', getFibonacci)
+api.add_route('/fibonacci/{taskId}', getFibonacci)
 api.add_route('/login/', login)
 api.add_route('/signup/', signup)
