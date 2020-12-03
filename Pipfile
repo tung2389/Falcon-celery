@@ -11,6 +11,7 @@ hupper = "*"
 bcrypt = "*"
 pyjwt = "*"
 python-dotenv = "*"
+celery = "*"
 
 [dev-packages]
 

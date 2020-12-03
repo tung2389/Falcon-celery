@@ -1,8 +1,8 @@
 import falcon
 import mongoengine as mongo
 
-from routes.calcFibonnaci import CalcFibonnaci
-from routes.getFibonnaci import GetFibonnaci
+from routes.calcFibonacci import CalcFibonacci
+from routes.getFibonacci import GetFibonacci
 from routes.login import Login
 from routes.signup import Signup
 
@@ -17,12 +17,12 @@ api = application = falcon.API(
     ]
 )
 
-calcFibonnaci = CalcFibonnaci()
-getFibonnaci = GetFibonnaci()
+calcFibonacci = CalcFibonacci()
+getFibonacci = GetFibonacci()
 login = Login()
 signup = Signup()
 
-api.add_route('/fibonnaci', calcFibonnaci)
-api.add_route('/fibonnaci/{id}', getFibonnaci)
+api.add_route('/fibonacci', calcFibonacci)
+# api.add_route('/fibonacci/{id}', getFibonacci)
 api.add_route('/login/', login)
 api.add_route('/signup/', signup)

@@ -10,7 +10,7 @@ JWT_SECRET = os.getenv("JWT_SECRET")
 class JWTAuthenticate(object):
     def process_request(self, req, resp):
         # Do not run this middleware on login or signup route
-        if req.path != '/login' and req.path != 'signup':
+        if req.path != '/login' and req.path != '/signup':
             authorization = req.headers['AUTHORIZATION']
             # Authorization header has the form "Bearer jwtToken"
             jwtToken = authorization[7:]
