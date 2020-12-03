@@ -1,5 +1,5 @@
 import falcon
-from controller.tasks import fibonacci
+from service.tasks import fibonacci
 
 class CalcFibonacci(object):
     
